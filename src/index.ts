@@ -27,6 +27,7 @@ async function run() {
       default:
         core.info('Building locally');
         builtImage = await Docker.build({ path: actionFolder, dockerfile, baseImage });
+        core.info('Debugging gitconfig');
         await Docker.debug(builtImage);
         await Docker.run(builtImage, { workspace, ...buildParameters });
         break;

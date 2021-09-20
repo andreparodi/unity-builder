@@ -16,6 +16,11 @@ class Docker {
 
     return tag;
   }
+  
+  static async debug(image, silent = false) {
+    const command = `docker run ${image} git config -l --show-origin`
+    await exec(command, undefined, { silent });
+  }
 
   static async run(image, parameters, silent = false) {
     const {

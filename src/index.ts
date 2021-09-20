@@ -25,7 +25,7 @@ async function run() {
 
       // default and local case
       default:
-        core.info('Building locally');
+        core.info('Building locally xx');
         core.info('Building docker image');
         builtImage = await Docker.build({ path: actionFolder, dockerfile, baseImage });
         core.info('Debugging gitconfig');

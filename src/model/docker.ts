@@ -16,11 +16,6 @@ class Docker {
 
     return tag;
   }
-  
-  static async debug(image, silent = false) {
-    const command = `docker run ${image} git config -l --show-origin`
-    await exec(command, undefined, { silent });
-  }
 
   static async run(image, parameters, silent = false) {
     const {
@@ -42,6 +37,8 @@ class Docker {
       androidKeyaliasPass,
       customParameters,
       sshAgent,
+      githubUsername,
+      githubPersonalAccessToken,
       chownFilesTo,
     } = parameters;
 
@@ -85,11 +82,14 @@ class Docker {
         --env RUNNER_TOOL_CACHE \
         --env RUNNER_TEMP \
         --env RUNNER_WORKSPACE \
+        --env GITHUB_USERNAME=${githubUsername} \
+        --env GITHUB_PERSONAL_ACCESS_TOKEN=${githubPersonalAccessToken} \
         ${sshAgent ? '--env SSH_AUTH_SOCK=/ssh-agent' : ''} \
         --volume "/var/run/docker.sock":"/var/run/docker.sock" \
         --volume "${runnerTempPath}/_github_home":"/root" \
         --volume "${runnerTempPath}/_github_workflow":"/github/workflow" \
         --volume "${workspace}":"/github/workspace" \
+
         ${sshAgent ? `--volume ${sshAgent}:/ssh-agent` : ''} \
         ${sshAgent ? '--volume /home/runner/.ssh/known_hosts:/root/.ssh/known_hosts:ro' : ''} \
         ${image}`;

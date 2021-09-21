@@ -89,6 +89,14 @@ class Input {
     return core.getInput('sshAgent') || '';
   }
 
+  static get githubUsername() {
+    return core.getInput('githubUsername') || '';
+  }
+
+  static get githubPersonalAccessToken() {
+    return core.getInput('githubPersonalAccessToken') || '';
+  }
+
   static get chownFilesTo() {
     return core.getInput('chownFilesTo') || '';
   }

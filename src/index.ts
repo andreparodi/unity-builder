@@ -28,7 +28,7 @@ async function run() {
         core.info('Building locally');
         core.info('Building docker image');
         builtImage = await Docker.build({ path: actionFolder, dockerfile, baseImage });
-        core.info('Running build');
+        core.info(`Running build username ${buildParameters['githubUsername']}`);
         await Docker.run(builtImage, { workspace, ...buildParameters });
         break;
     }

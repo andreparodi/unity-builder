@@ -5,6 +5,8 @@ echo "username:  $GITHUB_USERNAME"
 echo "pat:  $GITHUB_PERSONAL_ACCESS_TOKEN"
 git config --global url."https://$GITHUB_USERNAME:$GITHUB_PERSONAL_ACCESS_TOKEN@github.com/".insteadOf "https://github.com/"
 git config -l --show-origin
+GIT_TRACE=1
+git ls-remote "https://github.com/bn-mobile/UP_GitVersioning.git"
 
 #
 # Create directory for license activation

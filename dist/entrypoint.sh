@@ -9,6 +9,8 @@ git config -l --show-origin
 GIT_TRACE=2 GIT_CURL_VERBOSE=2 GIT_TRACE_PERFORMANCE=2 GIT_TRACE_PACK_ACCESS=2 GIT_TRACE_PACKET=2 GIT_TRACE_PACKFILE=2 GIT_TRACE_SETUP=2 GIT_TRACE_SHALLOW=2 git ls-remote "https://github.com/bn-mobile/UP_GitVersioning.git"
 
 git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"
+
+cat /root/.ssh/known_hosts
 #
 # Create directory for license activation
 #

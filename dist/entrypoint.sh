@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # some debug
-# find .
-# git config -l --show-origin
-# echo "$GITHUB_USERNAME"
-# echo "$GITHUB_PERSONAL_ACCESS_TOKEN"
-# git config --global url.”https://${GITHUB_USERNAME}:${GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/".insteadOf “https://github.com/"
+find .
+git config -l --show-origin
+echo "$GITHUB_USERNAME"
+echo "$GITHUB_PERSONAL_ACCESS_TOKEN"
+git config --global url.”https://${GITHUB_USERNAME}:${GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/".insteadOf “https://github.com/"
 
 #
 # Create directory for license activation

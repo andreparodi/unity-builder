@@ -110,14 +110,6 @@ inputs:
     required: false
     default: ''
     description: 'SSH Agent path to forward to the container'
-  githubUsername:
-    required: false
-    default: ''
-    description: 'githubUsername'
-  githubPersonalAccessToken:
-    required: false
-    default: ''
-    description: 'githubPersonalAccessToken'
   chownFilesTo:
     required: false
     default: ''

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # some debug
 git config -l --show-origin
-echo "username:  $GITHUB_USERNAME"
-echo "pat:  $GITHUB_PERSONAL_ACCESS_TOKEN"
-git config --global url."https://abcd:$GITHUB_PERSONAL_ACCESS_TOKEN@github.com/".insteadOf "https://github.com/"
+#echo "username:  $GITHUB_USERNAME"
+#echo "pat:  $GITHUB_PERSONAL_ACCESS_TOKEN"
+#git config --global url."https://abcd:$GITHUB_PERSONAL_ACCESS_TOKEN@github.com/".insteadOf "https://github.com/"
 git config -l --show-origin
-git config --local --unset-all 'http.https://github.com/.extraheader'
+#git config --local --unset-all 'http.https://github.com/.extraheader'
 GIT_TRACE=2 GIT_CURL_VERBOSE=2 GIT_TRACE_PERFORMANCE=2 GIT_TRACE_PACK_ACCESS=2 GIT_TRACE_PACKET=2 GIT_TRACE_PACKFILE=2 GIT_TRACE_SETUP=2 GIT_TRACE_SHALLOW=2 git ls-remote "https://github.com/bn-mobile/UP_GitVersioning.git"
 
 

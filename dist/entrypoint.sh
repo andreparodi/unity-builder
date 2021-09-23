@@ -19,8 +19,11 @@ GIT_TRACE=2 git ls-remote "https://github.com/bn-mobile/UP_GitVersioning.git"
 echo "======= try git with ssh explicit"
 GIT_TRACE=2 git ls-remote "ssh://git@github.com/bn-mobile/UP_GitVersioning.git"
 
-echo "======== try git with git no protocol"
-GIT_TRACE=2 git ls-remote "git@github.com/bn-mobile/UP_GitVersioning.git"
+echo "change ssh command"
+GIT_SSH_COMMAND="ssh -vvv -o StrictHostKeyChecking=no"
+
+echo "======= try git with ssh explicit"
+GIT_TRACE=2 git ls-remote "ssh://git@github.com/bn-mobile/UP_GitVersioning.git"
 
 echo "try ssh"
 ssh -vvv -o "BatchMode yes" git@github.com who
